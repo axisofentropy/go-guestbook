@@ -1,0 +1,22 @@
+# Uffizzi extension
+x-uffizzi:
+  ingress:
+    service: guestbook
+    port: 8080
+
+services:
+  redis:
+    image: redis:latest
+    deploy:
+      resources:
+        limits:
+          memory: 125M
+
+  guestbook:
+    image: "${IMAGE}"
+    environment:
+      REDIS_HOST: localhost
+    deploy:
+      resources:
+        limits:
+          memory: 125M
