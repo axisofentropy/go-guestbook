@@ -51,7 +51,7 @@ jobs:
           export IMAGE
           # Render simple template from environment variables.
           envsubst < docker-compose.template.yaml > docker-compose.rendered.yaml
-          cat docker-compose.rendered.yml
+          cat docker-compose.rendered.yaml
       - name: Deploy preview
         id: preview
         uses: UffizziCloud/preview-action@master
